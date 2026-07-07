@@ -1,13 +1,15 @@
 name: Heartbeat Workflow
 
-on: [push]
+on:
+  push:
 
 jobs:
-  verify-integrity: Pipeline Integrity
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout Repository Code
-      uses: actions/checkout@v4
+  verify-integrity:
+    runs-on: ubuntu-latest
 
-    - name: Log Status
-    run: echo "Pipeline Integrity Verified - Monitoring Active"
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Log Status
+        run: echo "Pipeline Integrity Verified - Monitoring Active"
